@@ -1,16 +1,21 @@
 using InspectionAPI.Extensions;
+using Microsoft.EntityFrameworkCore;
 using Repository;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSqlContext(builder.Configuration);
+
 // Add services to the container.
 builder.Services.ConfigureCors();
-builder.Services.AddSqlContext(builder.Configuration);
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
 
 var app = builder.Build();
 
