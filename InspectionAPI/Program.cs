@@ -1,4 +1,5 @@
 using InspectionAPI.Extensions;
+using Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 

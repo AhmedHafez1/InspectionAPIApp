@@ -19,8 +19,12 @@ namespace Entities.Models
         [StringLength(200)]
         public string? Comment { get; set; }
 
+        [StringLength(200)]
+        public string? Note { get; set; }
+
         [ForeignKey(nameof(InspectionType))]
         public int InspectionTypeId { get; set; }
+
         public InspectionType? InspectionType { get; set; }
 
     }
